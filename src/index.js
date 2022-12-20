@@ -15,3 +15,20 @@ function renderMovies(movies) {
         imgTag.addEventListener('click', showMovieDetails(movie))
     })
 }
+
+function showMovieDetails(movie) {
+    const detailedImage = document.querySelector('detail-image')
+    detailedImage.src = movie.image
+    const movieTitle = document.querySelector('#title')
+    movieTitle.textContent = movie.title
+    const releaseYear = document.querySelector('#year-released')
+    releaseYear.textContent = movie.release_year
+    const movieDescription = document.querySelector('#description')
+    movieDescription.textContent = movie.description
+    const movieWatched = document.querySelector('#watched')
+    movieWatched.textContent = movie.watched ? "Watched" : "UnWatched"
+    const bloodAmount = document.querySelector('#blood-amount')
+    bloodAmount.textContent = movie.blood_amount
+    movieWatched.addEventListener('click', () => toggleWatchedButton(movie))
+}
+
